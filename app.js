@@ -1,8 +1,9 @@
 require('dotenv').config();
-// ①express,MySQLの読み込み
+// ①express,MySQLの読み込み.
 const express = require('express');
 const mysql = require('mysql');
 const app = express();
+console.log("test");
 
 // ④フォームから送信された値を受け取れるようにする
 app.use(express.static('public'));
