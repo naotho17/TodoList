@@ -1,0 +1,15 @@
+h1{
+  color: rgb(117, 202, 202);
+}
+
+li{
+  padding: 10px;
+}
+.item-data{
+  float: left;
+}
+
+.item-menu{
+  display: inline-block;
+  padding-left:20px ;
+}

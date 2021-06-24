@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/style.css">
+<title>LIST APP</title>
+  </head>
+  
+  <body>
+    <h1>TODO LIST</h1>
+    <p>これはToDOリストです。<br>
+      文字を入力し、追加ボタンを押すと項目を追加できます！
+    </p>
+
+    <!-- データベースにPOST(追加)する -->
+      <form action="/" method="post">
+         <!-- 入力 -->
+         <input type="text" name="itemName">
+         <!-- 追加 -->
+         <input type="submit" value="追加！">
+      </form>
+
+    <!-- データベース”list_app”の"items"から取ってくる -->
+    <div class = "table">
+      <ul class="table-body">
+        <% items.forEach((item) => { %>
+          <li>
+            <div class="item-data">
+              <!-- <span class="id-column"><%= item.id %></span> -->
+              <div class="name-column"><%= item.name %></div>
+            </div>
+            <div class="item-menu">
+              <form action="/<%= item.id %>" method="post">
+              <input type="submit" value="削除" onclick="Delete()">
+              </form>
+            </div>             
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+
+<script>
+  // 削除ボタンを押したときアラートを表示する機能
+ function Delete() {
+   window.alert("本当に削除しますか？");
+ }
+</script>
+
+  </body>
+</html>
